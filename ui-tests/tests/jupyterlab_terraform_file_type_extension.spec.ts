@@ -18,8 +18,7 @@ test('should emit an activation console message', async ({ page }) => {
   expect(
     logs.filter(
       s =>
-        s ===
-        'JupyterLab extension jupyterlab_terraform_file_type_extension is activated!'
+        s === '[jupyterlab_terraform_file_type_extension] Extension activated!'
     )
   ).toHaveLength(1);
 });
