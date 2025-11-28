@@ -36,6 +36,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
       displayName: 'Terraform',
       mime: 'text/x-terraform',
       extensions: ['.tf', '.tfvars'],
+      filename: /.*\.(tf|tfvars)$/,
       support: new LanguageSupport(StreamLanguage.define(terraformMode))
     });
 
@@ -53,6 +54,8 @@ const plugin: JupyterFrontEndPlugin<void> = {
         '.tfmock.hcl',
         '.tfquery.hcl'
       ],
+      filename:
+        /.*\.(hcl|tfstack\.hcl|tfcomponent\.hcl|tfdeploy\.hcl|tftest\.hcl|tfmock\.hcl|tfquery\.hcl)$/,
       support: new LanguageSupport(StreamLanguage.define(terraformMode))
     });
 
@@ -62,6 +65,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
       displayName: 'Terraform',
       mimeTypes: ['text/x-terraform'],
       extensions: ['.tf'],
+      pattern: '.*\\.tf$',
       fileFormat: 'text' as const,
       contentType: 'file' as const,
       icon: terraformIcon
@@ -73,6 +77,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
       displayName: 'Terraform Variables',
       mimeTypes: ['text/x-terraform'],
       extensions: ['.tfvars'],
+      pattern: '.*\\.tfvars$',
       fileFormat: 'text' as const,
       contentType: 'file' as const,
       icon: terraformIcon
@@ -92,6 +97,8 @@ const plugin: JupyterFrontEndPlugin<void> = {
         '.tfmock.hcl',
         '.tfquery.hcl'
       ],
+      pattern:
+        '.*\\.(hcl|tfstack\\.hcl|tfcomponent\\.hcl|tfdeploy\\.hcl|tftest\\.hcl|tfmock\\.hcl|tfquery\\.hcl)$',
       fileFormat: 'text' as const,
       contentType: 'file' as const,
       icon: terraformIcon
