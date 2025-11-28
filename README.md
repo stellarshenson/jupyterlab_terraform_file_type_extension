@@ -10,8 +10,6 @@
 
 A JupyterLab extension providing comprehensive Terraform/HCL support with syntax highlighting and custom file type recognition.
 
-Because apparently we needed yet another way to stare at infrastructure-as-code instead of actually deploying it.
-
 ![Terraform Extension Screenshot](.resources/screenshot.png)
 
 ## Features
@@ -19,17 +17,21 @@ Because apparently we needed yet another way to stare at infrastructure-as-code 
 Comprehensive Terraform and HCL editing support in JupyterLab with syntax highlighting that distinguishes blocks, variables, functions, and expressions.
 
 **File recognition**:
+
 - Terraform: `*.tf`, `*.tfvars`
 - HCL: `*.hcl`, `*.tfstack.hcl`, `*.tfcomponent.hcl`, `*.tfdeploy.hcl`, `*.tftest.hcl`, `*.tfmock.hcl`, `*.tfquery.hcl`
 - Purple HashiCorp Terraform icon in file browser
 
 **Highlighting coverage**:
+
 - Block types: `resource`, `module`, `provider`, `variable`, `output`, `locals`, `data`, `terraform`
 - 100+ built-in Terraform functions
 - String interpolation with `${}` and `%{}` directives
 - Heredoc strings and escape sequences
 - Type keywords, constants, and operators
 - Comments: `#`, `//`, `/* */`
+
+Yes, this is yet another mass-produced file type extension. We are almost embarrassed by how utterly unremarkable it is - just the same boilerplate code with different keywords swapped in. But someone had to do it, and here we are. Syntax highlighting shamelessly borrowed from [hashicorp/vscode-terraform](https://github.com/hashicorp/vscode-terraform) - we stand on the shoulders of giants, or at least peek over their fence.
 
 ## Requirements
 
