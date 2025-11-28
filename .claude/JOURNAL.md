@@ -18,3 +18,9 @@ This journal tracks substantive work on documents, diagrams, and documentation c
 
 5. **Task - README refinements and tfstate support**: Refined README humor, added attribution, and added tfstate file support<br>
    **Result**: Moved self-deprecating comment below Features section with new text emphasizing the unremarkable nature of mass-produced file type extensions. Added shameless credit to hashicorp/vscode-terraform for syntax inspiration. Added `*.tfstate.*` file type registration with Terraform icon (JSON highlighting preserved). Code linted and prettified. Version 1.0.3
+
+6. **Task - CHANGELOG documentation**: Populated CHANGELOG.md with complete version history following jupyterlab-extensions format<br>
+   **Result**: Documented versions 1.0.0 through 1.0.3 with subsections for Initial Release, Terraform Syntax Implementation, File Type Registration, Syntax Highlighting Fix, Terraform State File Support, and README Refinements
+
+7. **Task - CI lint fix**: Removed package-lock.json causing CI lint failure<br>
+   **Result**: Deleted npm lockfile from yarn/jlpm managed project and added to .gitignore to prevent recurrence

@@ -126,3 +126,6 @@ dmypy.json
 
 # Yarn cache
 .yarn/
+
+# npm lockfile (project uses yarn/jlpm)
+package-lock.json
