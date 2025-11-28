@@ -18,7 +18,7 @@ Comprehensive Terraform and HCL editing support in JupyterLab with syntax highli
 
 **File recognition**:
 
-- Terraform: `*.tf`, `*.tfvars`
+- Terraform: `*.tf`, `*.tfvars`, `*.tfstate.*`
 - HCL: `*.hcl`, `*.tfstack.hcl`, `*.tfcomponent.hcl`, `*.tfdeploy.hcl`, `*.tftest.hcl`, `*.tfmock.hcl`, `*.tfquery.hcl`
 - Purple HashiCorp Terraform icon in file browser
 

@@ -15,3 +15,6 @@ This journal tracks substantive work on documents, diagrams, and documentation c
 
 4. **Task - Update CI/CD and README**: Updated GitHub workflows and README documentation to match makefile extension standards<br>
    **Result**: Updated build.yml with Python 3.12 and ignore_links for badge URLs. Rewrote README with features section matching makefile style, file recognition list, highlighting coverage details, and self-deprecating humor about infrastructure-as-code
+
+5. **Task - README refinements and tfstate support**: Refined README humor, added attribution, and added tfstate file support<br>
+   **Result**: Moved self-deprecating comment below Features section with new text emphasizing the unremarkable nature of mass-produced file type extensions. Added shameless credit to hashicorp/vscode-terraform for syntax inspiration. Added `*.tfstate.*` file type registration with Terraform icon (JSON highlighting preserved). Code linted and prettified. Version 1.0.3

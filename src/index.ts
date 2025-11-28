@@ -103,6 +103,18 @@ const plugin: JupyterFrontEndPlugin<void> = {
       contentType: 'file' as const,
       icon: terraformIcon
     });
+
+    // Register file type for Terraform state files (JSON format with Terraform icon)
+    app.docRegistry.addFileType({
+      name: 'terraform-state',
+      displayName: 'Terraform State',
+      mimeTypes: ['application/json'],
+      extensions: ['.tfstate'],
+      pattern: '.*\\.tfstate(\\..+)?$',
+      fileFormat: 'text' as const,
+      contentType: 'file' as const,
+      icon: terraformIcon
+    });
   }
 };
 
