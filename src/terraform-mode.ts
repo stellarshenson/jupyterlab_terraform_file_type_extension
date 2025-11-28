@@ -228,7 +228,10 @@ export const terraformMode: StreamParser<ITerraformState> = {
   token: (stream, state): string | null => {
     // Handle heredoc content
     if (state.inHeredoc) {
-      if (stream.sol() && stream.match(new RegExp(`^\\s*${state.heredocEnd}\\s*$`))) {
+      if (
+        stream.sol() &&
+        stream.match(new RegExp(`^\\s*${state.heredocEnd}\\s*$`))
+      ) {
         state.inHeredoc = false;
         state.heredocEnd = '';
         return 'string';
@@ -346,7 +349,10 @@ export const terraformMode: StreamParser<ITerraformState> = {
     }
 
     // Numbers
-    if (stream.match(/^-?0x[0-9a-fA-F]+/) || stream.match(/^-?\d+\.?\d*([eE][+-]?\d+)?/)) {
+    if (
+      stream.match(/^-?0x[0-9a-fA-F]+/) ||
+      stream.match(/^-?\d+\.?\d*([eE][+-]?\d+)?/)
+    ) {
       return 'number';
     }
 
