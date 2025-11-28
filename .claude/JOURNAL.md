@@ -24,3 +24,6 @@ This journal tracks substantive work on documents, diagrams, and documentation c
 
 7. **Task - CI lint fix**: Removed package-lock.json causing CI lint failure<br>
    **Result**: Deleted npm lockfile from yarn/jlpm managed project and added to .gitignore to prevent recurrence
+
+8. **Task - Version 1.0.4 release**: Published extension version 1.0.4 with all fixes<br>
+   **Result**: Built and published via `make publish`. Includes CHANGELOG, CI fixes, and UI test correction
