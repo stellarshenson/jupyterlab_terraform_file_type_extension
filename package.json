@@ -1,6 +1,6 @@
 {
     "name": "@stellarshenson/jupyterlab-terraform-file-type-extension",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Jupyterlab extension to support syntax highlighting for terraform files",
     "keywords": [
         "jupyter",
