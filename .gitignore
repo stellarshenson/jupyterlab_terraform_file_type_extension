@@ -129,3 +129,9 @@ dmypy.json
 
 # npm lockfile (project uses yarn/jlpm)
 package-lock.json
+
+# Run output
+logs/
+tmp/
+.nodeenv/
+junit.xml
