@@ -1,7 +1,7 @@
 # jupyterlab_terraform_file_type_extension
 
 [![GitHub Actions](https://github.com/stellarshenson/jupyterlab_terraform_file_type_extension/actions/workflows/build.yml/badge.svg)](https://github.com/stellarshenson/jupyterlab_terraform_file_type_extension/actions/workflows/build.yml)
-[![npm version](https://img.shields.io/npm/v/jupyterlab_terraform_file_type_extension.svg)](https://www.npmjs.com/package/jupyterlab_terraform_file_type_extension)
+[![npm version](https://img.shields.io/npm/v/@stellarshenson/jupyterlab-terraform-file-type-extension.svg)](https://www.npmjs.com/package/@stellarshenson/jupyterlab-terraform-file-type-extension)
 [![PyPI version](https://img.shields.io/pypi/v/jupyterlab-terraform-file-type-extension.svg)](https://pypi.org/project/jupyterlab-terraform-file-type-extension/)
 [![Total PyPI downloads](https://static.pepy.tech/badge/jupyterlab-terraform-file-type-extension)](https://pepy.tech/project/jupyterlab-terraform-file-type-extension)
 [![JupyterLab 4](https://img.shields.io/badge/JupyterLab-4-orange.svg)](https://jupyterlab.readthedocs.io/en/stable/)

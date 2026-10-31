@@ -12,5 +12,5 @@ except ImportError:
 def _jupyter_labextension_paths():
     return [{
         "src": "labextension",
-        "dest": "jupyterlab_terraform_file_type_extension"
+        "dest": "@stellarshenson/jupyterlab-terraform-file-type-extension"
     }]

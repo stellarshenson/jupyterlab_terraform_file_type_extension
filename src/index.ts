@@ -17,10 +17,10 @@ export const terraformIcon = new LabIcon({
 });
 
 /**
- * Initialization data for the jupyterlab_terraform_file_type_extension extension.
+ * Initialization data for the @stellarshenson/jupyterlab-terraform-file-type-extension extension.
  */
 const plugin: JupyterFrontEndPlugin<void> = {
-  id: 'jupyterlab_terraform_file_type_extension:plugin',
+  id: '@stellarshenson/jupyterlab-terraform-file-type-extension:plugin',
   description:
     'JupyterLab extension to support syntax highlighting for Terraform files',
   autoStart: true,

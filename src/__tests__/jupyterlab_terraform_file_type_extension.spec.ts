@@ -2,7 +2,7 @@
  * Example of [Jest](https://jestjs.io/docs/getting-started) unit tests
  */
 
-describe('jupyterlab_terraform_file_type_extension', () => {
+describe('@stellarshenson/jupyterlab-terraform-file-type-extension', () => {
   it('should be tested', () => {
     expect(1 + 1).toEqual(2);
   });
