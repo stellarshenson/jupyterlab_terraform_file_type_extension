@@ -2,6 +2,16 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## [1.0.11] - 2026-11-13
+
+### Changed
+
+- Ignore the PayPal donate link in the link check
+
+### Fixed
+
+- Close heredoc interpolations and carry block comments across lines
+
 ## [1.0.9] - 2026-10-31
 
 ### Changed
