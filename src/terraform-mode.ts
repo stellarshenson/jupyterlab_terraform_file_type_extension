@@ -198,6 +198,7 @@ interface ITerraformState {
   braceDepth: number;
   bracketDepth: number;
   parenDepth: number;
+  inComment: boolean;
   inString: boolean;
   stringChar: string;
   inHeredoc: boolean;
@@ -215,6 +216,7 @@ export const terraformMode: StreamParser<ITerraformState> = {
     braceDepth: 0,
     bracketDepth: 0,
     parenDepth: 0,
+    inComment: false,
     inString: false,
     stringChar: '',
     inHeredoc: false,
@@ -226,6 +228,34 @@ export const terraformMode: StreamParser<ITerraformState> = {
   }),
 
   token: (stream, state): string | null => {
+    // Handle the rest of a block comment, which may span lines
+    if (state.inComment) {
+      if (stream.match(/^.*?\*\//)) {
+        state.inComment = false;
+      } else {
+        stream.skipToEnd();
+      }
+      return 'comment';
+    }
+
+    // Handle interpolation; before the heredoc so that its closing brace is seen there too
+    if (state.inInterpolation) {
+      if (stream.peek() === '{') {
+        stream.next();
+        state.interpolationDepth++;
+        return null;
+      }
+      if (stream.peek() === '}') {
+        stream.next();
+        state.interpolationDepth--;
+        if (state.interpolationDepth === 0) {
+          state.inInterpolation = false;
+        }
+        return 'keyword';
+      }
+      // Continue with normal token parsing inside interpolation
+    }
+
     // Handle heredoc content
     if (state.inHeredoc) {
       if (
@@ -251,24 +281,6 @@ export const terraformMode: StreamParser<ITerraformState> = {
       }
       stream.next();
       return 'string';
-    }
-
-    // Handle interpolation
-    if (state.inInterpolation) {
-      if (stream.peek() === '{') {
-        stream.next();
-        state.interpolationDepth++;
-        return null;
-      }
-      if (stream.peek() === '}') {
-        stream.next();
-        state.interpolationDepth--;
-        if (state.interpolationDepth === 0) {
-          state.inInterpolation = false;
-        }
-        return 'keyword';
-      }
-      // Continue with normal token parsing inside interpolation
     }
 
     // Handle string content
@@ -321,12 +333,7 @@ export const terraformMode: StreamParser<ITerraformState> = {
       return 'comment';
     }
     if (stream.match(/^\/\*/)) {
-      while (!stream.eol()) {
-        if (stream.match(/\*\//)) {
-          return 'comment';
-        }
-        stream.next();
-      }
+      state.inComment = true;
       return 'comment';
     }
 
